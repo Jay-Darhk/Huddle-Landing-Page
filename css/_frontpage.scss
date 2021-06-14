@@ -1,0 +1,96 @@
+main {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 45px;
+
+    @include breakpoint(medium) {
+        grid-template-columns: 1fr;
+        gap: 70px;
+    }
+
+    .frontImage {
+        max-width: 700px;
+
+        @include breakpoint(medium) {
+            margin-right: auto;
+            margin-left: auto;
+            max-width: 500px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+    }
+
+    .frontText {
+        
+        @include breakpoint(medium) {
+            text-align: center;
+        }
+        
+        h1 {
+            font-family: $font-title;
+            font-weight: 600;
+            font-size: 2.75rem; // 44px
+            line-height: 1.5;
+            margin-top: 45px;
+            margin-bottom: 35px;
+
+            @include breakpoint(large) {
+                margin-top: 25px;
+                margin-bottom: 30px;
+                line-height: 1.3;
+                font-size: 2.1875rem; // 35px
+            }
+
+            @include breakpoint(medium) {
+                margin-top: 0;
+                margin-bottom: 23px;
+            }
+
+            @include breakpoint(small) {
+                font-size: 1.6875rem; // 27px
+            }
+        }
+        
+        p {
+            font-size: 1.25rem; // 20px
+            line-height: 1.7;
+            margin: 0;
+
+            @include breakpoint(large) {
+                line-height: 1.45;
+            }
+
+            @include breakpoint(small) {
+                font-size: 1.16875rem; // 18.7px
+            }
+        }
+        
+        a {
+            display: inline-block;
+            color: $purple;
+            font-size: 1.25rem;
+            padding: 18px 60px;
+            background-color: $white;
+            border-radius: 50px;
+            margin-top: 25px;
+            line-height: 1;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 8px 8px 12px darken($purple, 30%);
+            transition: background-color 200ms ease-in-out, color 200ms ease-in-out;
+
+            &:hover {
+                background-color: $magenta;
+                color: $white;
+            }
+
+            @include breakpoint(medium) {
+                font-size: 0.875rem;
+                padding: 15px 75px;
+            }
+        }
+    }
+}
